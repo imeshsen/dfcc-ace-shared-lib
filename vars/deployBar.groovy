@@ -1,7 +1,7 @@
 // A custom step to deploy the BAR file to a specified environment
 def call(String environment) {
     // Read the file content from the shared library's 'resources' folder
-    def jsonText = libraryResource("resources/${environment}.json")
+    def jsonText = libraryResource("${environment}.json")
 
     // Parse the JSON string into a Groovy object
     def lazyConfig = new groovy.json.JsonSlurper().parseText(jsonText)
