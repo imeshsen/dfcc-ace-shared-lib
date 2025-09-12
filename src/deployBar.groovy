@@ -1,15 +1,14 @@
-// A custom step to deploy the BAR file to a specified environment
 def call(String environment) {
     // Read the environment-specific configuration from the resources folder
-    def config = readJSON(file: "resources/${environment}.json")
+    def config = readJSON(text: libraryResource("resources/${environment}.json"))
 
     echo "Deploying BAR file to ${environment} environment..."
     sh """
         docker run --rm \\
         --volumes-from jenkins \\
         --network ace-network \\
-        ibmint:latest deploy \\
-        --input-bar-file /var/jenkins_home/workspace/shared-lib-test/MyIntegrationTestProject.bar \\
+        ibm-ace-container:latest deploy \\
+        --input-bar-file /var/jenkins_home/workspace/dfcc-demo/MyIntegrationTestProject.bar \\
         --output-host ${config.host} \\
         --output-port ${config.port} \\
         --output-server ${config.server}
