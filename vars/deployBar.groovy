@@ -1,6 +1,6 @@
 def call(String environment) {
     // Read the environment-specific configuration from the resources folder
-    def config = readJSON(text: libraryResource("resources/${environment}.json"))
+    def config = readJSON(text: libraryResource("/${environment}.json"))
     echo "Deploying BAR file to ${environment} environment..."
     sh """
         docker run --rm \\
