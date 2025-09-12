@@ -11,7 +11,7 @@ def call(String environment) {
         docker run --rm \\
         --volumes-from jenkins \\
         ibmint:latest deploy \\
-        --input-bar-file /var/jenkins_home/workspace/shared-lib-test/MyIntegrationTestProject.bar \\
+        --input-bar-file ${env.WORKSPACE}/MyIntegrationTestProject.bar \\
         --output-host ${config['host']} \\
         --output-port ${config['port']} \\
         --output-server ${config['server']}
