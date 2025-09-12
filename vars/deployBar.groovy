@@ -4,7 +4,10 @@ def call(String environment) {
     def jsonText = libraryResource("${environment}.json")
 
     // Parse the JSON string into a Groovy object
-    def config = new groovy.json.JsonSlurper().parseText(jsonText)
+    def lazyConfig = new groovy.json.JsonSlurper().parseText(jsonText)
+
+    // Force the LazyMap to be a serializable HashMap
+    def config = new HashMap(lazyConfig)
 
     echo "Deploying BAR file to ${environment} environment..."
     sh """
