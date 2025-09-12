@@ -10,7 +10,6 @@ def call(String environment) {
     sh """
         docker run --rm \\
         --volumes-from jenkins \\
-        --network ace-network \\
         ibmint:latest deploy \\
         --input-bar-file /var/jenkins_home/workspace/dfcc-demo/MyIntegrationTestProject.bar \\
         --output-host ${config['host']} \\
