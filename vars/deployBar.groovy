@@ -1,6 +1,6 @@
 // vars/deployBar.groovy
 import groovy.json.JsonSlurper
-import org.jenkinsci.plugins.workflow.steps.NonCPS
+import com.cloudbees.groovy.cps.NonCPS
 
 def call(String environment) {
     def config = loadConfig(environment)
