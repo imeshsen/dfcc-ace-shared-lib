@@ -22,7 +22,7 @@ def call(String environment) {
 
 @NonCPS
 def loadConfig(String environment) {
-    def jsonText = libraryResource("${environment}.json")
+    def jsonText = libraryResource("environments/${environment}.json")
     def parsed = new JsonSlurper().parseText(jsonText)
     // Convert LazyMap → HashMap explicitly
     return new HashMap(parsed)
