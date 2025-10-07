@@ -1,6 +1,6 @@
 
 def call() {
-    echo "Building BAR file using ibmint to echo  ${env.WORKSPACE}..."
+    echo "Building BAR file using ibmint to ${env.WORKSPACE}..."
                 sh """
                     docker run --rm \\
                     --volumes-from jenkins \\
