@@ -13,7 +13,7 @@ def call(String envName) {
         -v ${env.WORKSPACE}:${env.WORKSPACE} \
         -w ${env.WORKSPACE} \
         ibmint:latest apply overrides \
-        --input-bar-file ${env.WORKSPACE}/MyIntegrationTestProject.bar \
+        --input-bar-file ${env.WORKSPACE}/${name}.bar \
         --overrides-file ${envName}-override.txt \
         --output-bar-file ${env.WORKSPACE}/${envName}-override.bar
     """
