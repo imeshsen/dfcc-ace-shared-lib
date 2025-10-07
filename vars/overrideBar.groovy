@@ -10,3 +10,7 @@ def call() {
                 """
                 echo "BAR file override complete."
 }
+
+
+// docker run --rm -v /home/imesh/myStuff/ibmovride:/app ibmint:latest apply overrides /app/overrides.txt --input-bar-file /app/MyIntegrationTestProject.bar \\
+// --output-bar-file /app/MyIntegrationTestProject_updated.bar
