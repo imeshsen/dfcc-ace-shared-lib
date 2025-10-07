@@ -13,7 +13,7 @@
         --volumes-from jenkins \
         ibmint:latest apply overrides \
         --input-bar-file ${env.WORKSPACE}/${name}.bar \
-        --overrides-file ${envName}-override.txt \
+        --overrides ${envName}-override.txt \
         --output-bar-file ${env.WORKSPACE}/${envName}-override.bar
     """
 
