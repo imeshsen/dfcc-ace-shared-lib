@@ -2,10 +2,10 @@ def call(String envName) {
     echo "Overriding BAR file using ibmint for environment: ${envName}"
 
     // Load the correct override file from the shared lib
-    def overrideFileContent = libraryResource "overrides/${envName}-override.yaml"
+    def overrideFileContent = libraryResource "overrides/${envName}-override.txt"
 
     // Write the content into the workspace
-    writeFile file: "${env.WORKSPACE}/${envName}-override.yaml", text: overrideFileContent
+    writeFile file: "${env.WORKSPACE}/${envName}-override.txt", text: overrideFileContent
 
     // Run ibmint command inside Docker
     sh """
