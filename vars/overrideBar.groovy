@@ -1,4 +1,4 @@
- \def call(String envName) {
+ def call(String envName) {
     echo "Overriding BAR file using ibmint for environment: ${envName}"
 
     // Load the correct override file from the shared lib
