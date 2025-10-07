@@ -10,6 +10,8 @@
     // Run ibmint command inside Docker
     sh """
         docker run --rm \
+        -v ${env.WORKSPACE}:${env.WORKSPACE} \
+        -w ${env.WORKSPACE} \
         --volumes-from jenkins \
         ibmint:latest apply overrides ${envName}-override.txt \
         --input-bar-file ${env.WORKSPACE}/${name}.bar \
