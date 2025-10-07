@@ -1,4 +1,4 @@
-def call(String envName) {
+ \def call(String envName) {
     echo "Overriding BAR file using ibmint for environment: ${envName}"
 
     // Load the correct override file from the shared lib
@@ -10,7 +10,7 @@ def call(String envName) {
     // Run ibmint command inside Docker
     sh """
         docker run --rm \
-        --volumes-from jenkins
+        --volumes-from jenkins \
         // -v ${env.WORKSPACE}:${env.WORKSPACE} \
         // -w ${env.WORKSPACE} \
         ibmint:latest apply overrides \
