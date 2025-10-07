@@ -21,6 +21,3 @@
     echo "BAR file override complete for ${envName}."
 }
 
-
-        // -v ${env.WORKSPACE}:${env.WORKSPACE} \
-        // -w ${env.WORKSPACE} \
