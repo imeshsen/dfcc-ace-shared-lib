@@ -1,0 +1,4 @@
+overrides:
+  gen.DFCC_ACE_COLLATERALS:
+    applicationProperties:
+      baseURL: "http://uat.server.com:9090/irf-transact-web/api/v1.0.0"
