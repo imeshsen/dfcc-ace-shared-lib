@@ -10,19 +10,19 @@ def call(String environment) {
         returnStdout: true
     ).trim()
 
-    echo "Deploying ${name}-${envName}-override.bar file to ${environment} environment..."
+    echo "Deploying ${name}-${environment}-override.bar file to ${environment} environment..."
 
     sh """
         docker run --rm \\
         --volumes-from jenkins \\
         ibmint:latest deploy \\
-        --input-bar-file ${env.WORKSPACE}/${name}-${envName}-override.bar \\
+        --input-bar-file ${env.WORKSPACE}/${name}-${environment}-override.bar \\
         --output-host ${config['host']} \\
         --output-port ${config['port']} \\
         --output-server ${config['server']}
     """
 
-    echo "${name}-${envName}-override.bar deployment completed successfully."
+    echo "${name}-${environment}-override.bar deployment completed successfully."
 }
 
 @NonCPS
