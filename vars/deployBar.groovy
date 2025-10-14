@@ -5,6 +5,11 @@ import com.cloudbees.groovy.cps.NonCPS
 def call(String environment) {
     def config = loadConfig(environment)
 
+    def name = sh(
+        script: "git config --get remote.origin.url | sed 's#.*/##' | sed 's/\\.git\$//'",
+        returnStdout: true
+    ).trim()
+
     echo "Deploying BAR file to ${environment} environment..."
 
     sh """
