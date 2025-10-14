@@ -5,7 +5,7 @@
         returnStdout: true
     ).trim()
   
-    echo "Overriding ${name}.bar to ${name}-override.bar using ibmint for environment: ${envName}"
+    echo "Overriding ${name}.bar to ${name}-${envName}-override.bar using ibmint for environment: ${envName}"
 
     // Load the correct override file from the shared lib
     def overrideFileContent = libraryResource "overrides/${envName}-override.txt"
@@ -19,9 +19,9 @@
         docker run --rm \
         --volumes-from jenkins \
         -w ${env.WORKSPACE} \
-        ibmint:latest apply overrides ${env.WORKSPACE}/${envName}-override.txt \
+        ibmint:latest apply overrides ${env.WORKSPACE}/${name}-override.txt \
         --input-bar-file ${env.WORKSPACE}/${name}.bar \
-        --output-bar-file ${env.WORKSPACE}/${envName}-override.bar
+        --output-bar-file ${env.WORKSPACE}/${name}-${envName}-override.bar
     """
 
     echo "BAR file override complete for ${envName}."
