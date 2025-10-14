@@ -15,7 +15,7 @@
 
     // Run ibmint command inside Docker
     sh """
-        rm -rf ${envName}-override.bar || true
+        rm -rf ${name}-${envName}-override.bar || true
         docker run --rm \
         --volumes-from jenkins \
         -w ${env.WORKSPACE} \
