@@ -1,5 +1,11 @@
  def call(String envName) {
-    echo "Overriding BAR file using ibmint for environment: ${envName}"
+
+  def name = sh(
+        script: "git config --get remote.origin.url | sed 's#.*/##' | sed 's/\\.git\$//'",
+        returnStdout: true
+    ).trim()
+  
+    echo "Overriding ${name}.bar to ${name}-override.bar using ibmint for environment: ${envName}"
 
     // Load the correct override file from the shared lib
     def overrideFileContent = libraryResource "overrides/${envName}-override.txt"
