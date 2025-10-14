@@ -11,7 +11,7 @@ def call(String environment) {
         docker run --rm \\
         --volumes-from jenkins \\
         ibmint:latest deploy \\
-        --input-bar-file ${env.WORKSPACE}/${name}.bar \\
+        --input-bar-file ${env.WORKSPACE}/${name}-override.bar \\
         --output-host ${config['host']} \\
         --output-port ${config['port']} \\
         --output-server ${config['server']}
