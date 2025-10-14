@@ -1,1 +1,1 @@
-gen.DFCC_ACE_COLLATERALS#baseURL=http://uat.server.com:9090/irf-transact-web/api/v1.0.0
+gen.DFCC_ACE_COLLATERALS#baseURL=http://dev.server.com:9090/irf-transact-web/api/v1.0.0
