@@ -19,7 +19,7 @@
         docker run --rm \
         --volumes-from jenkins \
         -w ${env.WORKSPACE} \
-        ibmint:latest apply overrides ${env.WORKSPACE}/${name}-override.txt \
+        ibmint:latest apply overrides ${env.WORKSPACE}/${envName}-override.txt \
         --input-bar-file ${env.WORKSPACE}/${name}.bar \
         --output-bar-file ${env.WORKSPACE}/${name}-${envName}-override.bar
     """
