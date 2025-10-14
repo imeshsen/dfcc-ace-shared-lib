@@ -10,7 +10,7 @@ def call(String environment) {
         returnStdout: true
     ).trim()
 
-    echo "Deploying BAR file to ${environment} environment..."
+    echo "Deploying ${name}-${envName}-override.bar file to ${environment} environment..."
 
     sh """
         docker run --rm \\
@@ -22,7 +22,7 @@ def call(String environment) {
         --output-server ${config['server']}
     """
 
-    echo "BAR file deployment initiated successfully."
+    echo "${name}-${envName}-override.bar deployment completed successfully."
 }
 
 @NonCPS
