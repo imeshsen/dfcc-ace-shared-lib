@@ -1,5 +1,9 @@
-
 def call() {
+    def name = sh(
+        script: "basename ${env.WORKSPACE}",
+        returnStdout: true
+    ).trim()
+    
     echo "Building BAR file using ibmint to ${env.WORKSPACE}..."
                 sh """
                     docker run --rm \\
