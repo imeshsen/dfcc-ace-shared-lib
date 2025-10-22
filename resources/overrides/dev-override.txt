@@ -1,1 +1,4 @@
 gen.DFCC_ACE_COLLATERALS#baseURL=http://dev.server.com:9090/irf-transact-web/api/v1.0.0
+gen.DFCC_ACE_COLLATERALS#LOG_DIRECTORY=/home/aceadmin/logs/
+gen.DFCC_ACE_COLLATERALS#ERROR_LOG_DIR=/home/aceadmin/logs/
+gen.DFCC_ACE_COLLATERALS#ERROR_LOG_FILE=DFCC_ACE_COLLATERALS_EXC
